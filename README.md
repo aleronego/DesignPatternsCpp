@@ -3,6 +3,6 @@ Design patterns
 Behavioral
 
 Creational
-    Factory method
-    
+-Factory method
+
 Structural
