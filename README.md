@@ -1,9 +1,9 @@
-#Design patterns
+# Design patterns
 
-##Behavioral
+## Behavioral
 
-##Creational
+## Creational
 *Factory method
 *Abstract factory
 
-##Structural
+## Structural
