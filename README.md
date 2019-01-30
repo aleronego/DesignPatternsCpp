@@ -3,7 +3,7 @@
 ## Behavioral
 
 ## Creational
-*Factory method
-*Abstract factory
+* Factory method
+* Abstract factory
 
 ## Structural
