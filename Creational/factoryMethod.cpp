@@ -1,68 +1,68 @@
 #include <iostream>
 using namespace std;
 
-class Transport
+class Product
 {
 public:
-    virtual void delivery() = 0;
-    virtual ~Transport() = default;
+    virtual void doSomething() = 0;
+    virtual ~Product() = default;
 };
 
-class Truck : public  Transport
+class ConcreteProductA : public  Product
 {
 public:
-    void delivery() override
+    void doSomething() override
     {
-        cout << "Delivery by road\n";
+        cout << "doSomething A\n";
     }
 };
 
-class Ship : public  Transport
+class ConcreteProductB : public  Product
 {
 public:
-    void delivery() override
+    void doSomething() override
     {
-        cout << "Delivery by sea\n";
+        cout << "doSomething B\n";
     }
 };
 
 class Factory
 {
 public:
-    virtual Transport* setTransport() = 0;
+    virtual Product* setProduct() = 0;
     virtual ~Factory() = default;
 };
 
-class RoadFactory : public Factory
+class ConcreteFactoryA : public Factory
 {
 public:
-    Transport* setTransport() override
+    Product* setProduct() override
     {
-        return new Truck;
+        return new ConcreteProductA;
     }
 };
 
-class SeaFactory : public Factory
+class ConcreteFactoryB : public Factory
 {
 public:
-    Transport* setTransport() override
+    Product* setProduct() override
     {
-        return new Ship;
+        return new ConcreteProductB;
     }
 };
 
 int main()
 {
-    RoadFactory road;
-    SeaFactory sea;
+    ConcreteFactoryA concreteA;
+    ConcreteFactoryB concreteB;
 
-    Factory* deliveryTypes[] = {&road, &sea};
+    Factory* doSomethingTypes[] = {&concreteA, &concreteB};
 
-    for(auto&& transport : deliveryTypes)
+    for(auto&& product : doSomethingTypes)
     {
-        Transport* t = transport->setTransport();
-        t->delivery();
-        delete t;
+        Product* p = product->setProduct();
+        p->doSomething();
+        delete p;
     }   
     return 0;
 }
