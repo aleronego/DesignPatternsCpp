@@ -6,5 +6,6 @@
 * Factory method
 * Abstract factory
 * Singleton
+* Prototype
 
 ## Structural
