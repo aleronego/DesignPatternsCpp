@@ -5,10 +5,9 @@ using namespace std;
 class FarenheitSensor
 {
 private:
-    float t = 37.0;
+    float t;
 public:
-    //FarenheitSensor(float temp) : t(temp) {};
-    //void setTemp(float temp){ t = temp; }
+    FarenheitSensor(float temp) : t(temp) {};
     float getTemp() { return t; }
 };
 
@@ -17,7 +16,6 @@ class Sensor
 public:
     virtual ~Sensor() = default;
     virtual float getTemp() = 0;
-    virtual float getFarenheitTemp() = 0;
 };
 
 class Adapter : public Sensor
@@ -31,19 +29,16 @@ public:
     {
         return (sensor->getTemp()-32.0)*5.0/9.0;
     }
-    float getFarenheitTemp() override
-    {
-        return sensor->getTemp();
-    }
 };
 
 int main(int argc, char const *argv[])
 {
-    //FarenheitSensor* far = new FarenheitSensor;
-    Sensor* adapt = new Adapter(new FarenheitSensor);
+    FarenheitSensor* far = new FarenheitSensor(37);
+    Sensor* adapt = new Adapter(new FarenheitSensor(37));
     
-    //Sensor* adapt = new Adapter(FarenheitSensor(37));
-    cout << "Farenheit: " << adapt->getFarenheitTemp() << endl;
+    cout << "Farenheit: " << far->getTemp() << endl;
     cout << "Celsius: " << adapt->getTemp() << endl;
+
+    delete far; delete adapt;
     return 0;
 }
