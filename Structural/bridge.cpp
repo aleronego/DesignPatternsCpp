@@ -16,7 +16,6 @@ public:
     }
 };
 
-
 class Division : public Obj
 {
 public:
