@@ -11,3 +11,4 @@
 ## Structural
 * Adapter
 * Proxy
+* Bridge
