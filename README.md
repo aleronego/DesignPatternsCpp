@@ -10,3 +10,4 @@
 
 ## Structural
 * Adapter
+* Proxy
