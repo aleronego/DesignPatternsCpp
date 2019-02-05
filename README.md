@@ -3,12 +3,13 @@
 ## Behavioral
 
 ## Creational
-* Factory method
 * Abstract factory
-* Singleton
+* Factory method
 * Prototype
+* Singleton
 
 ## Structural
 * Adapter
-* Proxy
 * Bridge
+* Decorator
+* Proxy
