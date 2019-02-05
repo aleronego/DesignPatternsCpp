@@ -12,4 +12,5 @@
 * Adapter
 * Bridge
 * Decorator
+* Facade
 * Proxy
