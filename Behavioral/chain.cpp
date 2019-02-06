@@ -16,7 +16,7 @@ class Chain
 {
     int skill;
     string name;
-    shared_ptr<Chain> next = shared_ptr<Chain>();
+    shared_ptr<Chain> next;
     void doWork(string s) { 
         cout << name << " can handle " << s << endl; 
     }
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
             make_shared<Action>(11, "eleven"),
             make_shared<Action>(8, "eight") 
     };
-    
+
     for(auto&& act : arr)
         handle->process(act);
     
