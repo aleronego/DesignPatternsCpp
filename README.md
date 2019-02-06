@@ -1,6 +1,7 @@
 # Design patterns
 
 ## Behavioral
+* Chain of Responsibility
 
 ## Creational
 * Abstract factory
