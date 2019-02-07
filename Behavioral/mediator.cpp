@@ -1,11 +1,8 @@
 #include <iostream>
-#include <memory>
 #include <string>
 using namespace std;
 
-class Colleague;
-class ConcreteA;
-class ConcreteB;
+class Colleague;// error: 'Colleague' has not been declared
 
 class Mediator
 {
@@ -13,24 +10,17 @@ public:
     virtual void send(string, Colleague*) = 0;
 };
 
-
-
 class Colleague
 {
 protected:
     Mediator* mediator;
 public:
-    //virtual ~Colleague() = default;
     explicit Colleague(Mediator* m) : mediator(m) {}
-    //virtual void notify(string) = 0;
-    //virtual void sendMsg(string) = 0;
-    //void sendMsg(string s) { mediator->send(s, this); }
 };
 
 class ConcreteA : public Colleague
 {
 public:
-
     explicit ConcreteA(Mediator* me) : Colleague(me) {}
     void notify(string s) 
     {
@@ -42,7 +32,6 @@ public:
 class ConcreteB : public Colleague
 {
 public:
-
     explicit ConcreteB(Mediator* me) : Colleague(me) {}
     void notify(string s) 
     {
@@ -75,6 +64,7 @@ int main(int argc, char const *argv[])
     ConcreteMediator m;
     ConcreteA A(&m);
     ConcreteB B(&m);
+
     m.setA(&A);
     m.setB(&B);
 
