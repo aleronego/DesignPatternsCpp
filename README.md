@@ -3,6 +3,7 @@
 ## Behavioral
 * Chain of Responsibility
 * Strategy
+* Mediator
 
 ## Creational
 * Abstract factory
