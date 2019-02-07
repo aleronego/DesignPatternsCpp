@@ -2,6 +2,7 @@
 
 ## Behavioral
 * Chain of Responsibility
+* Strategy
 
 ## Creational
 * Abstract factory
